@@ -10,7 +10,7 @@ function BenefitsDAO(db) {
         return new BenefitsDAO(db);
     }
 
-    const usersCol = db.collection("users");
+    const usersCol = db.db().collection("users");
 
     this.getAllNonAdminUsers = callback => {
         usersCol.find({

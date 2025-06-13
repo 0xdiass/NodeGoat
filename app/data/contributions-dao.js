@@ -11,7 +11,7 @@ function ContributionsDAO(db) {
         return new ContributionsDAO(db);
     }
 
-    const contributionsDB = db.collection("contributions");
+    const contributionsDB = db.db().collection("contributions");
     const userDAO = new UserDAO(db);
 
     this.update = (userId, preTax, afterTax, roth, callback) => {

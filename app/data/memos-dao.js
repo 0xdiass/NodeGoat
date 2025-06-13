@@ -10,7 +10,7 @@ function MemosDAO(db) {
         return new MemosDAO(db);
     }
 
-    const memosCol = db.collection("memos");
+    const memosCol = db.db().collection("memos");
 
     this.insert = (memo, callback) => {
 

@@ -12,7 +12,7 @@ const AllocationsDAO = function(db){
         return new AllocationsDAO(db);
     }
 
-    const allocationsCol = db.collection("allocations");
+    const allocationsCol = db.db().collection("allocations");
     const userDAO = new UserDAO(db);
 
     this.update = (userId, stocks, funds, bonds, callback) => {

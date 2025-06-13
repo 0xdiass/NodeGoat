@@ -10,7 +10,7 @@ function ProfileDAO(db) {
         return new ProfileDAO(db);
     }
 
-    const users = db.collection("users");
+    const users = db.db().collection("users");
 
     /* Fix for A6 - Sensitive Data Exposure
 

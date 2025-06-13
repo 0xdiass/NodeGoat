@@ -1,6 +1,6 @@
 // default app configuration
 const port = process.env.PORT || 4000;
-let db = process.env.MONGODB_URI || "mongodb://localhost:27017/nodegoat";
+let db = "mongodb://127.0.0.1:27017/nodegoat";
 
 module.exports = {
     port,

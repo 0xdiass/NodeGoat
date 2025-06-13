@@ -12,7 +12,8 @@ function UserDAO(db) {
         return new UserDAO(db);
     }
 
-    const usersCol = db.collection("users");
+    const dbInstance = db.db();
+    const usersCol = dbInstance.collection("users");
 
     this.addUser = (userName, firstName, lastName, password, email, callback) => {
 
@@ -107,7 +108,7 @@ function UserDAO(db) {
     };
 
     this.getNextSequence = (name, callback) => {
-        db.collection("counters").findAndModify({
+        db.db().collection("counters").findAndModify({
                 _id: name
             }, [], {
                 $inc: {
